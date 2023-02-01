@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome Extension with React & Webpack",
+  "description": "A chrome extension boilerplate built with React 17, Webpack 5, and Webpack Dev Server 4",
+  "options_page": "options.html",
+  "background": { "service_worker": "background.bundle.js" },
+  "key":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA797CeswqFKIDcyC/vPbupRTRMrtY67TaQzTjXqPgf1zVGiUV7jACETWS7Fud/tBiE0QUqsVwWb9Sw81RVxqnlCNsiilIXBD6medLegR0xQn73GWSH3wMQC8JURIu4O5n2LR68jse0uLv5fCWD2IFw3WdatWACh0sM55TsufGS2qD2Dv7bk5U2K2/XsuIf/4pU74DGyeByq2vPZS0EAFe73XON/2nSHRC10Z1CdwC5IDDKQ/3yhmFEV1aQ1sDxqu9VkR8adLiORqTazfjnSo5GR8qVAQtB1E3rYEQPqAgkJC5pfROkt1iMPBmCkI7kSlCpUnrKpDVXiLshXV4a9Ek3wIDAQAB",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon-34.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "icons": {
+    "128": "icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*", "<all_urls>"],
+      "js": ["contentScript.bundle.js"],
+      "css": ["content.styles.css"]
+    }
+  ],
+  "devtools_page": "devtools.html",
+  "web_accessible_resources": [
+    {
+      "resources": ["content.styles.css", "icon-128.png", "icon-34.png"],
+      "matches": []
+    }
+  ]
+}
