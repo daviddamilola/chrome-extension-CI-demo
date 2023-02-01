@@ -20,6 +20,7 @@ jobs:
         npm run build
     - name: Zip
       run: 
+        npm install npm-build-zip
         npm run zip
     - name: Upload & release
       uses: mnao305/chrome-extension-upload@v4.0.1
