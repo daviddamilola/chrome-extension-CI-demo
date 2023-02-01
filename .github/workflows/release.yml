@@ -1,9 +1,8 @@
 name: Publish
-
 on:
   push:
-    tags:
-      - '*'
+    branches:
+      - main
 
 jobs:
   build:
@@ -16,8 +15,7 @@ jobs:
       with:
         node-version: 12
     - name: Build
-      run: |
-        npm ci
+      run: 
         npm run build
     - name: Zip
       run: 
